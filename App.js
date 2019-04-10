@@ -26,20 +26,20 @@ Counter.decrement()
 
 export default class App extends Component {
   state = {
-    count: 1
+    rating: 1
   };
 
-  increment = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
+  // increment = () => {
+  //   this.setState({ count: this.state.count + 1 });
+  // };
 
   update = e => {
-    this.setState({ count: e.count })
+    this.setState({ rating: e.rating })
   };
 
-  updateNative = () => {
-    this.counterRef.update(this.state.count);
-  };
+  // updateNative = () => {
+  //   this.counterRef.update(this.state.count);
+  // };
 
   render() {
     return (
@@ -61,6 +61,7 @@ export default class App extends Component {
         <RatingControlView 
           style={styles.wrapper}
           rating={5}
+          onUpdate={this.update}
           ref={e => (this.counterRef = e)}/>
       </View>
     );
